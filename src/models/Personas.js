@@ -11,6 +11,7 @@ const personSchema = new Schema(
     pastor: String,
     origen: String,
     estado: String,
+    dni: String
   },
   {
     versionKey: false,
