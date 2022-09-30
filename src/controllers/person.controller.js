@@ -18,6 +18,7 @@ export const createPerson = async (req, res) => {
     pastor: req.body.pastor,
     origen: req.body.origen,
     estado: req.body.estado,
+    dni: req.body.dni,
   });
   const personSaved = await newPerson.save();
   res.json(personSaved);
