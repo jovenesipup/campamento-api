@@ -1,0 +1,41 @@
+###
+GET http://localhost:3001/api/personas
+
+###
+GET http://localhost:3001/api/personas?size=5
+
+###
+POST http://localhost:3001/api
+Content-Type: application/json
+
+{
+    "nombre": "Danhjuiel",
+    "apellidos": "Tohjjvar",
+    "telefono": 86798,
+    "correo" : "adadadad",
+    "iglesia": "Renacer",
+    "pastor": "Edson", 
+    "origen": "Lima", 
+    "estado": "False"
+}
+
+###
+GET http://localhost:3001/api/personas/6334b786b3f3d39da8f5b772
+
+###
+DELETE  http://localhost:3001/api/personas/6334b824121130f31aa5c5fa 
+
+###
+PUT http://localhost:3001/api/personas/6334b9d968d55a75ce322201
+Content-Type: application/json
+
+{
+    "nombre": "Daniel",
+    "apellidos": "Tovar",
+    "telefono": 88888,
+    "correo" : "adadadad",
+    "iglesia": "Renacer",
+    "pastor": "Edson", 
+    "origen": "Lima", 
+    "estado": "False"
+}
