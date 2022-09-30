@@ -30,7 +30,7 @@ export const findOnePerson = async (req, res) => {
 };
 
 export const findOnePersonByDni = async (req, res) => {
-  const person = await Person.findById(req.params.dni);
+  const person = await Person.findOnePersonByDni(req.params.dni);
   res.json(person);
 };
 
