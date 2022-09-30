@@ -28,6 +28,11 @@ export const findOnePerson = async (req, res) => {
   res.json(person);
 };
 
+export const findOnePersonByDni = async (req, res) => {
+  const person = await Person.findById(req.params.dni);
+  res.json(person);
+};
+
 export const deletePerson = async (req, res) => {
   await Person.findByIdAndDelete(req.params.id);
   res.json({

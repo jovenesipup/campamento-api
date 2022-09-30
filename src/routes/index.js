@@ -10,6 +10,8 @@ router.post('/', personControl.createPerson)
 
 router.get('/personas/:id', personControl.findOnePerson)
 
+router.get('/personas/:dni', personControl.findOnePersonByDni)
+
 router.delete('/personas/:id', personControl.deletePerson)
 
 router.put('/personas/:id', personControl.updatePerson)
