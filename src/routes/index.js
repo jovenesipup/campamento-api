@@ -1,19 +1,24 @@
-import {Router} from "express";
+import { Router } from "express";
 
 import * as personControl from "../controllers/person.controller";
+import * as userControl from "../controllers/user.controller";
 
-const router = Router()
+const router = Router();
 
-router.get('/personas', personControl.getPersons)
+router.get("/personas", personControl.getPersons);
 
-router.post('/', personControl.createPerson)
+router.post("/", personControl.createPerson);
 
-router.get('/personas/:id', personControl.findOnePerson)
+router.get("/personas/:id", personControl.findOnePerson);
 
-router.get('/personas/dni/:dni', personControl.findOnePersonByDni)
+router.get("/personas/dni/:dni", personControl.findOnePersonByDni);
 
-router.delete('/personas/:id', personControl.deletePerson)
+router.delete("/personas/:id", personControl.deletePerson);
 
-router.put('/personas/:id', personControl.updatePerson)
+router.put("/personas/:id", personControl.updatePerson);
 
-export default router
+router.post("/user", userControl.createUser)
+
+router.get("/user/:user&:password", userControl.validateUser)
+
+export default router;
