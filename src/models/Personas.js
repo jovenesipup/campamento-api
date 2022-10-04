@@ -11,7 +11,11 @@ const personSchema = new Schema(
     pastor: String,
     origen: String,
     estado: String,
-    dni: String
+    dni: String,
+    ninos: Number,
+    civil: String,
+    talla: String,
+    genero: String
   },
   {
     versionKey: false,
