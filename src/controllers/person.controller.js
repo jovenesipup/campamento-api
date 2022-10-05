@@ -38,6 +38,11 @@ export const findOnePersonByDni = async (req, res) => {
   res.json(person);
 };
 
+export const filtersPerson = async (req, res) => {
+  const person = await Person.find({dni: req.params.dni, nombre: req.params.nombre, apellidos: req.params.apellidos});
+  res.json(person);
+};
+
 export const deletePerson = async (req, res) => {
   await Person.findByIdAndDelete(req.params.id);
   res.json({
