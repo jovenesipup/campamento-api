@@ -15,7 +15,8 @@ const personSchema = new Schema(
     ninos: Number,
     civil: String,
     talla: String,
-    genero: String
+    genero: String,
+    pago: String
   },
   {
     versionKey: false,

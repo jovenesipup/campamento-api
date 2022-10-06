@@ -1,10 +1,11 @@
 import Person from "../models/Personas";
 import { getPagination } from "../libs/getPagination";
+import { getFilter } from "../libs/filterPerson";
 
 export const getPersons = async (req, res) => {
-    const {size,page} = req.query
-    const {limit, offset} = getPagination(page, size)
-  const persons = await Person.paginate({}, {offset, limit});
+  const { size, page } = req.query;
+  const { limit, offset } = getPagination(page, size);
+  const persons = await Person.paginate({}, { offset, limit });
   res.json(persons);
 };
 
@@ -23,6 +24,7 @@ export const createPerson = async (req, res) => {
     civil: req.body.civil,
     talla: req.body.talla,
     genero: req.body.genero,
+    pago: req.body.pago,
   });
   const personSaved = await newPerson.save();
   res.json(personSaved);
@@ -34,13 +36,19 @@ export const findOnePerson = async (req, res) => {
 };
 
 export const findOnePersonByDni = async (req, res) => {
-  const person = await Person.find({dni: req.params.dni});
+  const person = await Person.find({ dni: req.params.dni });
   res.json(person);
 };
 
 export const filtersPerson = async (req, res) => {
-  const person = await Person.find({dni: req.params.dni, nombre: req.params.nombre, apellidos: req.params.apellidos});
-  res.json(person);
+  const persons = await Person.find({
+    $or: [
+      { dni: req.body.dni },
+      { nombre: req.body.nombre },
+      { apellidos: req.body.apellidos },
+    ],
+  });
+  res.json(persons);
 };
 
 export const deletePerson = async (req, res) => {
