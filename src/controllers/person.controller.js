@@ -40,6 +40,11 @@ export const findOnePersonByDni = async (req, res) => {
   res.json(person);
 };
 
+export const findPersonByName = async (req, res) => {
+  const person = await Person.find({ nombre: "/"+req.params.nombre+"/" });
+  res.json(person);
+};
+
 export const filtersPerson = async (req, res) => {
   const persons = await Person.find({
     $or: [

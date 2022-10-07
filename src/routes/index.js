@@ -13,6 +13,8 @@ router.get("/personas/:id", personControl.findOnePerson);
 
 router.get("/personas/dni/:dni", personControl.findOnePersonByDni);
 
+router.get("/personas/nombre/:nombre", personControl.findPersonByName);
+
 router.get("/personas/filtrar", personControl.filtersPerson);
 
 router.delete("/personas/:id", personControl.deletePerson);

@@ -1,11 +1,20 @@
 ###
+GET https://campamentoapi.pro/api/personas?size=13&page=7
+
+###
 GET http://localhost:3001/api/personas
 
 ###
-GET http://localhost:3001/api/personas?size=5
+GET http://localhost:3001/api/personas/filter
+Content-Type: application/json
 
+{
+    "dni": "000",
+    "nombre": "",
+    "apellidos": ""
+}
 ###
-POST https://campamentoapi.pro/api
+POST http://localhost:3001/api
 Content-Type: application/json
 
 {
@@ -17,8 +26,17 @@ Content-Type: application/json
     "pastor": "Edson", 
     "origen": "Lima", 
     "estado": "pendiente",
-    "dni": "123100000"
+    "dni": "12323900",
+    "talla": "a",
+    "ninos": 3,
+    "genero": "asd"
 }
+
+###
+GET http://localhost:3001/api/personas/nombre/123
+
+###
+GET http://localhost:3001/api/personas/dni/234
 
 ###
 GET http://localhost:3001/api/personas/6334b786b3f3d39da8f5b772
@@ -40,4 +58,16 @@ Content-Type: application/json
     "origen": "Lima", 
     "estado": "False",
     "dni": "123123123"
+}
+
+###
+GET https://campamentoapi.pro/api/user/admincampamento2023root&63388fa2b6Q9fc54d62aJ7395c
+
+###
+POST https://campamentoapi.pro/api/user
+Content-Type: application/json
+
+{
+    "user": "admincampamento2023root",
+    "password": "63388fa2b6Q9fc54d62aJ7395c"
 }
