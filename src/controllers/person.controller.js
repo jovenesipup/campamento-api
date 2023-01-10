@@ -26,6 +26,8 @@ export const createPerson = async (req, res) => {
     genero: req.body.genero,
     pago: req.body.pago,
     comentario: req.body.comentario,
+    infante: req.body.infante,
+    edad: req.body.edad
   });
   const personSaved = await newPerson.save();
   res.json(personSaved);

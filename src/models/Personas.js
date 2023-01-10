@@ -17,7 +17,10 @@ const personSchema = new Schema(
     talla: String,
     genero: String,
     pago: String,
-    comentario: String
+    comentario: String,
+    infante: Boolean,
+    edad: Number
+
   },
   {
     versionKey: false,
