@@ -49,7 +49,9 @@ export const findPersonByName = async (req, res) => {
 };
 
 export const findPersonByStatus = async (req, res) => {
-  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}});
+  const { size, page } = req.query;
+  const { limit, offset } = getPagination(page, size);
+  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}}).paginate({}, { offset, limit });
   res.json(person);
 };
 
