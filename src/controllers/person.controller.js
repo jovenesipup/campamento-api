@@ -48,6 +48,11 @@ export const findPersonByName = async (req, res) => {
   res.json(person);
 };
 
+export const findPersonByStatus = async (req, res) => {
+  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}});
+  res.json(person);
+};
+
 export const filtersPerson = async (req, res) => {
   const persons = await Person.find({
     $or: [
