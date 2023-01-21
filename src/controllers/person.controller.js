@@ -50,7 +50,8 @@ export const findPersonByName = async (req, res) => {
 
 export const findPersonByStatus = async (req, res) => {
   const limit = req.body.limit
-  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}}).limit(limit)
+  const skip = req.body.skip
+  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}}).skip(skip).limit(limit)
   res.json(person);
 };
 
