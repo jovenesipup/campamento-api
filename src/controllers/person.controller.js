@@ -49,10 +49,8 @@ export const findPersonByName = async (req, res) => {
 };
 
 export const findPersonByStatus = async (req, res) => {
-  const { size, page } = req.query;
-  const { limit, offset } = getPagination(page, size);
-  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}}).limit(3)
-  const personPagi = person.paginate
+  const limit = req.body.limit
+  const person = await Person.find({ estado: {$regex:req.params.estado, $options: "i"}}).limit(limit)
   res.json(person);
 };
 
