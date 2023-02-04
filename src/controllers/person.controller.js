@@ -49,8 +49,8 @@ export const findPersonByName = async (req, res) => {
 };
 
 export const findPersonByStatus = async (req, res) => {
-  const limit = req.body.limit
-  const skip = req.body.skip
+  const limit = req.params.limit
+  const skip = req.params.skip
   const person = await Person.find({ estado: req.params.estado}).skip(skip).limit(limit)
   res.json(person);
 };
