@@ -46,7 +46,16 @@ export const findOnePersonByDni = async (req, res) => {
 };
 
 export const findOnePersonByCabana = async (req, res) => {
-  const person = await Person.find({ hospeda: {$ne: 'carpa'} });
+  const limit = req.params.limit
+  const skip = req.params.skip
+  const person = await Person.find({ hospeda: 'carpa'}).skip(skip).limit(limit);
+  res.json(person);
+};
+
+export const findOnePersonByCarpa = async (req, res) => {
+  const limit = req.params.limit
+  const skip = req.params.skip
+  const person = await Person.find({ hospeda: 'carpa'}).skip(skip).limit(limit);
   res.json(person);
 };
 
