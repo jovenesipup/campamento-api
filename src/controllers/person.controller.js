@@ -45,6 +45,11 @@ export const findOnePersonByDni = async (req, res) => {
   res.json(person);
 };
 
+export const findOnePersonByCabana = async (req, res) => {
+  const person = await Person.find({ hospeda: {$ne: 'carpa'} });
+  res.json(person);
+};
+
 export const findPersonByName = async (req, res) => {
   const person = await Person.find({ nombre: {$regex:req.params.nombre, $options: "i"}});
   res.json(person);
