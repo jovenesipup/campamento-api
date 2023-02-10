@@ -19,7 +19,9 @@ const personSchema = new Schema(
     pago: String,
     comentario: String,
     infante: Boolean,
-    edad: Number
+    edad: Number,
+    weiPoint: String,
+    hospeda: String
 
   },
   {
