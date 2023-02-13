@@ -45,6 +45,13 @@ export const findOnePersonByDni = async (req, res) => {
   res.json(person);
 };
 
+export const findOnePersonBySanta = async (req, res) => {
+  const limit = req.params.limit
+  const skip = req.params.skip
+  const person = await Person.find({ weiPoint: '2'}).skip(skip).limit(limit);
+  res.json(person);
+};
+
 export const findOnePersonByCabana = async (req, res) => {
   const limit = req.params.limit
   const skip = req.params.skip
