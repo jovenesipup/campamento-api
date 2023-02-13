@@ -11,7 +11,8 @@ export const validateUser = async (req, res) => {
 export const createUser = async (req, res) => {
   const newUser = new User({
     user: req.body.user,
-    password: req.body.password
+    password: req.body.password,
+    role: req.body.role
   });
   const userSaved = await newUser.save();
   res.json(userSaved);

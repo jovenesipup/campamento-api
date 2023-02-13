@@ -4,7 +4,8 @@ import mongoosePaginate from "mongoose-paginate-v2";
 const userSchema = new Schema(
   {
     user: String,
-    password: String
+    password: String,
+    role: Number
   },
   {
     versionKey: false,
