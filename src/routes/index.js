@@ -15,7 +15,11 @@ router.get("/personas/dni/:dni", personControl.findOnePersonByDni);
 
 router.get("/personas/cabana/:limit&:skip", personControl.findOnePersonByCabana);
 
+router.get("/personas/pan/:limit&:skip", personControl.findOnePersonByPan);
+
 router.get("/personas/santa/:limit&:skip", personControl.findOnePersonBySanta);
+
+router.get("/personas/motupe/:limit&:skip", personControl.findOnePersonByMotupe);
 
 router.get("/personas/carpa/:limit&:skip", personControl.findOnePersonByCarpa);
 
