@@ -29,7 +29,8 @@ export const createPerson = async (req, res) => {
     infante: req.body.infante,
     edad: req.body.edad,
     weiPoint: req.body.weiPoint,
-    hospeda: req.body.hospeda
+    hospeda: req.body.hospeda,
+    food: req.body.food
   });
   const personSaved = await newPerson.save();
   res.json(personSaved);

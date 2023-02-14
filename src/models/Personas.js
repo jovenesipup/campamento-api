@@ -21,7 +21,8 @@ const personSchema = new Schema(
     infante: Boolean,
     edad: Number,
     weiPoint: String,
-    hospeda: String
+    hospeda: String,
+    food: Object
 
   },
   {
